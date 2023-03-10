@@ -1,30 +1,29 @@
 import csv
 import os
 
-election_csv = os.path.join("Resources", "election_data.csv")
+election_path = os.path.join("Resources", "election_data.csv")
+with open(election_path, "r") as election_file:
+    csvreader = csv.reader(election_file, delimiter=",")
+    next(csvreader)
 
-# Open file
-with open('election_csv') as csvfile:
-    csvreader = csv.reader(csvfile, delimiter=",")
-
-    # variables for vote counts
+    #variables for vote counts
     total_votes = 0
     stockham_votes = 0
     degette_votes = 0
     doane_votes = 0
 
-    # Read each row of data
-    for row in reader:
-        # Add up the total votes
-        total_votes += int(row[1])
+    #loop through rows
+    for row in csvreader:
+        #add up for total vote
+        total_votes += 1
 
-        # Count the votes for each candidate
+                # Count the votes for each candidate
         if row[2] == 'Charles Casper Stockham':
-            stockham_votes += int(row[1])
+            stockham_votes += 1
         elif row[2] == 'Diana DeGette':
-            degette_votes += int(row[1])
+            degette_votes += 1
         elif row[2] == 'Raymon Anthony Doane':
-            doane_votes += int(row[1])
+            doane_votes += 1
 
     # Calculate the percentage 
     stockham_percent = stockham_votes / total_votes * 100
