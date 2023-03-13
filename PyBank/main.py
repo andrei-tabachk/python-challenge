@@ -43,7 +43,7 @@ with open(budget_path, "r") as budget_file:
     # Calculate the average
     average_change = sum(monthly_changes) / len(monthly_changes)
 
-    #Print title
+    #Print title and results
     print("Financial Analysis")
     print("-----------------------")
     print('Total Months:', total_months)
