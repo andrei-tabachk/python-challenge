@@ -52,6 +52,13 @@ with open(budget_path, "r") as budget_file:
     print('Greatest Increase in Profits:', '{} (${:.2f})'.format(greatest_increase[0], greatest_increase[1]))
     print('Greatest Decrease in Profits:', '{} (${:.2f})'.format(greatest_decrease[0], greatest_decrease[1]))
 
-    
 
+with open('main_PyBank.txt','w') as file:
 
+    file.write("Financial Analysis\n")
+    file.write("-----------------------\n")
+    file.write('Total Months: {}\n'.format(total_months))
+    file.write('Total: ${:,.2f}\n'.format(total_profit_loss))
+    file.write('Average Change: ${:.2f}\n'.format(average_change))
+    file.write('Greatest Increase in Profits: {} (${:.2f})\n'.format(greatest_increase[0], greatest_increase[1]))
+    file.write('Greatest Decrease in Profits: {} (${:.2f})\n'.format(greatest_decrease[0], greatest_decrease[1])) 

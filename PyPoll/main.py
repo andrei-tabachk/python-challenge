@@ -50,3 +50,25 @@ with open(election_path, "r") as election_file:
     else:
         print('Winner: Raymon Anthony Doane')
     print("-----------------------")
+
+
+with open('main_PyPoll.txt','w') as file:
+
+    #write results to file
+    file.write("Election Results\n")
+    file.write("-----------------------\n")
+    file.write('Total Votes:{}\n'.format(total_votes))
+    file.write("-----------------------\n")
+    file.write('Charles Casper Stockham:, {:.3f}% ({})\n'.format(stockham_percent, stockham_votes))
+    file.write('Diana DeGette:, {:.3f}% ({})\n'.format(degette_percent, degette_votes))
+    file.write('Raymon Anthony Doane:, {:.3f}% ({})\n'.format(doane_percent, doane_votes))
+    file.write("-----------------------\n")
+
+    # Determine the winner
+    if degette_votes > stockham_votes and degette_votes > doane_votes:
+        file.write('Winner: Diana DeGette\n')
+    elif stockham_votes > degette_votes and stockham_votes > doane_votes:
+        file.write('Winner: Charles Casper Stockham\n')
+    else:
+        file.write('Winner: Raymon Anthony Doane\n')
+    file.write("-----------------------\n")
